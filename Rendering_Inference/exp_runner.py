@@ -74,7 +74,6 @@ class Runner:
         ###################################################################################################################
 
         self.no_split = self.conf.get_bool('dataset.no_split', default = False)
-        self.no_split = True  # always true for inference
         self.split_per_ray = self.conf.get_int('dataset.split_per_ray', default=65536)
                 
         ###################################################################################################################
