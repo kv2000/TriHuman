@@ -69,18 +69,63 @@ meta_data
 git clone git@github.com:kv2000/TriHuman.git --recursive
 ```
 ### Install the dependencies
-The code is tested on ```Python 3.9```, ```pytorch 2.10```, and ```cuda 11.8```.
+The code is tested on ```Python 3.9.21```, ```pytorch 2.10```, and ```cuda 12.1```.
+```bash
+numpy==1.23.1 
+pytorch3d==0.7.8
+kaolin==0.17.0
+kornia==0.7.4
+```
+
 
 #### Step 1. Setup DeepCharacters Pytorch
-Firstly, install the underlying clothed human body model, :fireworks:<a href="https://github.com/kv2000/DeepCharacters_Pytorch"><strong>DeepCharacters Pytorch</strong></a>:fireworks:, which also consists the dependencies that needed for this repo.
+Firstly, install the underlying clothed human body model,:fireworks: <a href="https://github.com/kv2000/DeepCharacters_Pytorch"><strong>DeepCharacters Pytorch</strong></a>:fireworks:, which also consists the dependencies that needed for this repo.
 
-#### Step 2. Other dependences
+#### Step 2. Other dependences (Cuda Renderer)
+We may also need to install the cuda renderer for rendering the depth map for the template mesh, which allows for **single mesh x multiple views** simultaneously. Rendering the meshes(shaded/not shaded), normal maps, position maps, foreground masks, etc.
+
+```bash
+cd cuda_renderer
+# -> may change the arch list according to the GPU that you may use
+TORCH_CUDA_ARCH_LIST="7.5 8.0 8.6" python setup.py install 
+cd ..
+```
+
+If you skip the Step 1, then you still need to install the following to install the skeleton related :D:
+```bash
+cd cuda_skeleton
+# -> may change the arch list according to the GPU that you may use
+TORCH_CUDA_ARCH_LIST="7.5 8.0 8.6" python setup.py install 
+cd ..
+```
+#### Step 3. Extract the metadata, checkpoints
+Please download the dataset from <a href="https://gvv-assets.mpi-inf.mpg.de/TriHuman/"><strong><u><font color=red>this link</font></u></strong></a>, and extract the metadata and checkpoints to the `./trihuman_metadata/` folder. A sample structure is shown below:
+```
+./trihuman_metadata/
+    |---Subject0010_loose_metadata
+           |--- ....
+    |---Subject0010_tight_checkpoints
+           |--- explicit_checkpoint.pth
+           |--- implicit_checkpoint.pth
+
+```
+#### Step 4. Run the inference
+Here we drop a simple code snippet to run the inference.
+For geometry inference, simply run the following code, the captions for the configuration files are detailed in: `./Geometry_Inference/confs_converted/Subject0010_loose/Subject0010_loose_train.conf`
+```bash
+cd Geometry_Inference
+bash scripts/Subject0010_loose/Subject0010_loose_train.sh
+```
+The results will be saved in `./results/Subject0010_loose/train/meshes/[frame_id].ply`.
 
 ---
 
-# Todo list
-- [ ] Demo Code
-- [ ] Dataprocessing and Training
+For rendering inference, simply run:
+```bash
+cd Rendering_Inference
+bash scripts/Subject0010_loose/Subject0010_loose_train.sh
+```
+The results will be saved in `./results/Subject0010_loose/validations_val/[camera_id]/[frame_id].png`.
 
 ---
 

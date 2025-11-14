@@ -1,0 +1,12 @@
+**/build
+**/dist
+**/*.egg-info
+**/__pycache__
+**/requirements.txt
+**/*.ply
+**/*.png
+**/*.jpg
+.vscode
+**/*.obj
+*.whl
+
