@@ -15,12 +15,6 @@
 </p> 
 
 ---
-
-# News
-
-**2025-11-14** The <strong><font color=green>Dataset</font></strong> and <strong><font color=green>Demo Code </font></strong> is released! Please check the sections below for more details.
-
----
 # Dataset
 Please find the <strong>Raw Data and Annotations</strong>, the <strong>Metadata</strong>, and the <strong>Checkpoints</strong> that is used in the paper
 <a href="https://gvv-assets.mpi-inf.mpg.de/TriHuman/"><strong><u><font color=red>from this link</font></u></strong></a>.
