@@ -1,4 +1,8 @@
-# TriHuman: A Real-time and Controllable Tri-plane Representation for Detailed Human Geometry and Appearance Synthesis (TOG 2024)
+# TriHuman: A Real-time and Controllable Tri-plane Representation for Detailed Human Geometry and Appearance Synthesis 
+
+<p align="center" style="font-size:15pt; font-weight:bold;">
+    ACM Transactions on Graphics (TOG), Preseneted at SIGGRAPH Asia 2024
+</p>
 
 <p align="center">
 <a href="https://people.mpi-inf.mpg.de/~hezhu/"><strong>Heming Zhu</strong></a>
@@ -14,7 +18,7 @@
 
 # News
 
-**2024-11-29** The initial release, i.e., the <strong><font color=green>Dataset</font></strong> is available, the <strong><font color=red>Demo Code </font></strong> is on the way.
+**2025-11-14** The <strong><font color=green>Dataset</font></strong> and <strong><font color=green>Demo Code </font></strong> is released! Please check the sections below for more details.
 
 ---
 # Dataset
@@ -129,6 +133,24 @@ The results will be saved in `./results/Subject0010_loose/validations_val/[camer
 
 ---
 
+# Citation
+
+If you find our dataset and source code is useful for your research, please consider citing our paper:
+
+```bibtex
+@article{zhu2023trihuman,
+  title={Trihuman: a real-time and controllable tri-plane representation for detailed human geometry and appearance synthesis},
+  author={Zhu, Heming and Zhan, Fangneng and Theobalt, Christian and Habermann, Marc},
+  journal={ACM Transactions on Graphics},
+  volume={44},
+  number={1},
+  pages={1--17},
+  year={2024},
+  publisher={ACM New York, NY}
+}
+```
+---
+
 # Contact
 For questions, clarifications, feel free to get in touch with:  
 Heming Zhu: hezhu@mpi-inf.mpg.de  
@@ -140,7 +162,7 @@ Deep Characters Pyotrch is under [CC-BY-NC](https://creativecommons.org/licenses
 
 ---
 # Acknowledgements
-Christian Theobalt was supported by ERC Consolidator Grant 4DReply (No.770784). Adam Kortylewski was supported by the German Science Foundation (No.468670075). This project was also supported by the Saarbrucken Research Center for Visual Computing, Interaction, and AI. 
+Christian Theobalt was supported by ERC Consolidator Grant 4DReply (No.770784). This project was also supported by the Saarbrucken Research Center for Visual Computing, Interaction, and AI. 
 
 Below are some resources that we benefit from (keep updating):
 
